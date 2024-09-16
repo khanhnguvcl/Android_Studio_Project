@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bluebg"
+    tools:context=".LoginActivity">
+
+    <TextView
+
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.218" />
+
+    <EditText
+        android:id="@+id/inputUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_person"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Họ và tên"
+        android:inputType="text"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/ic_security"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/inputUsername"
+        app:layout_constraintStart_toStartOf="@+id/inputUsername"
+        app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Quên mật khẩu?"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/btn_bg"
+        android:text="Đăng nhập"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" >
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn chưa có tài khoản?"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/button"
+            app:layout_constraintStart_toStartOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/button"/>
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:text="Đăng ký"
+            android:textAlignment="viewStart"
+            android:textColor="#F80202"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/button"
+            app:layout_constraintStart_toStartOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textStyle="italic"
+        android:text="Hoặc đăng nhập bằng"
+        android:id="@+id/otheroption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/ll1"
+        app:layout_constraintStart_toStartOf="@+id/ll1"
+        app:layout_constraintTop_toBottomOf="@+id/ll1"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/otheroption"
+        app:layout_constraintStart_toStartOf="@+id/otheroption"
+        app:layout_constraintTop_toBottomOf="@+id/otheroption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gg"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg"
+            android:drawableLeft="@drawable/ic_google"
+            android:drawablePadding="10dp"
+            android:textAlignment="viewStart"
+            android:text="Google"
+            tools:layout_editor_absoluteX="67dp"
+            tools:layout_editor_absoluteY="591dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fb"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_bg"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:drawablePadding="10dp"
+            android:textAlignment="viewStart"
+            android:text="Facebook"
+            tools:layout_editor_absoluteX="239dp"
+            tools:layout_editor_absoluteY="591dp" />
+    </LinearLayout>
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="617dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="617dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintStart_toStartOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="#4CAF50"
+        android:text="22115053122118"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
