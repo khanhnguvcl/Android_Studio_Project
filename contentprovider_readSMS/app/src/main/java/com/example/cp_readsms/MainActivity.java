@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnShowSms;
     private RecyclerView recyclerViewMessages;
     private MessageAdapter messageAdapter;
-    private List<String> messageList;
+    private List<Message> messageList;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -48,11 +48,13 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = contentResolver.query(Telephony.Sms.CONTENT_URI, null, null, null, null);
 
         if (cursor != null) {
+            int indexAddress = cursor.getColumnIndex(Telephony.Sms.ADDRESS);
             int indexBody = cursor.getColumnIndex(Telephony.Sms.BODY);
             messageList.clear(); // Xóa danh sách cũ trước khi tải lại
             while (cursor.moveToNext()) {
-                String message = cursor.getString(indexBody);
-                messageList.add(message); // Thêm từng tin nhắn vào danh sách
+                String sender = cursor.getString(indexAddress); // Lấy người gửi
+                String content = cursor.getString(indexBody); // Lấy nội dung tin nhắn
+                messageList.add(new Message(sender, content)); // Thêm tin nhắn vào danh sách
             }
             cursor.close();
             messageAdapter.notifyDataSetChanged(); // Cập nhật giao diện với danh sách mới

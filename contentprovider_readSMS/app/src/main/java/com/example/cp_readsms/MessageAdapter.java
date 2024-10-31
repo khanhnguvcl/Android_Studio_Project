@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
-    private List<String> messageList;
+    private List<Message> messages;
 
-    public MessageAdapter(List<String> messageList) {
-        this.messageList = messageList;
+    public MessageAdapter(List<Message> messages) {
+        this.messages = messages;
     }
 
     @NonNull
@@ -29,21 +29,23 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
-        String message = messageList.get(position);
-        holder.tvMessage.setText(message);
+        Message message = messages.get(position);
+        holder.tvSender.setText(message.getSender());
+        holder.tvMessage.setText(message.getContent());
     }
 
     @Override
     public int getItemCount() {
-        return messageList.size();
+        return messages.size();
     }
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {
-        TextView tvMessage;
+        TextView tvMessage, tvSender;
 
         public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
             tvMessage = itemView.findViewById(R.id.tv_message);
+            tvSender = itemView.findViewById(R.id.tv_sender);
         }
     }
 }//end class
